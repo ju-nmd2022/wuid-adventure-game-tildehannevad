@@ -3,64 +3,13 @@
   text-align: center;
 }
 
+#canvas {
+  width: 100%;
+  position: absolute;
+}
+
 button {
   color: black;
   background-color: lightpink;
   height: 1cm;
-}
-
-.backyardBody {
-  margin: 0px;
-  background-image: url(./photos/backyard.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-}
-
-.arrowRightBackyard {
-  margin-left: 85vw;
-}
-
-.bodyFence {
-  margin: 0px;
-  background-image: url(./photos/fence.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-}
-
-.arrowsFence {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.bodyDogpark {
-  margin: 0px;
-  background-image: url(./photos/dogpark.jpeg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-}
-
-.arrowsDogpark {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.bodyRoad {
-  margin: 0px;
-  background-image: url(./photos/road.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
 }

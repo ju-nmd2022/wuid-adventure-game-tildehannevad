@@ -25,7 +25,44 @@ h1 {
 #fenceKey {
   width: 100px;
   rotate: 270deg;
-  margin-bottom: 50px;
+  margin-bottom: 500px;
+}
+
+#inventoryKey {
+  width: 100px;
+  rotate: 90deg;
+  display: flex;
+  position: absolute;
+  bottom: 250px;
+  margin-left: 240px;
+}
+
+#inventoryDogbone {
+  width: 100px;
+  rotate: 90deg;
+  display: flex;
+  position: absolute;
+  bottom: 150px;
+  margin-left: 240px;
+}
+
+#inventoryDogCollar {
+  width: 100px;
+  display: flex;
+  position: absolute;
+  bottom: 30px;
+  margin-left: 230px;
+}
+
+#parkDogbone {
+  width: 100px;
+  rotate: 270deg;
+  margin-bottom: 500px;
+}
+
+#parkDogCollar {
+  width: 100px;
+  margin-bottom: 500px;
 }
 
 #arrowLeft {
@@ -39,4 +76,14 @@ h1 {
 .arrows {
   display: flex;
   justify-content: space-between;
+}
+
+#guide {
+  position: absolute;
+  z-index: 1;
+  margin-top: 400px;
+  margin-left: 700px;
+  background-color: lightpink;
+  width: 300px;
+  padding: 20px;
 }

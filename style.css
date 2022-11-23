@@ -65,6 +65,22 @@ h1 {
   margin-bottom: 500px;
 }
 
+#aliveDog {
+  width: 350px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 200px;
+  margin-left: 700px;
+}
+
+#deadDog {
+  width: 250px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 200px;
+  margin-left: 700px;
+}
+
 #arrowLeft {
   width: 100px;
 }
@@ -79,6 +95,26 @@ h1 {
 }
 
 #guide {
+  position: absolute;
+  z-index: 1;
+  margin-top: 400px;
+  margin-left: 700px;
+  background-color: lightpink;
+  width: 300px;
+  padding: 20px;
+}
+
+#finnish {
+  position: absolute;
+  z-index: 1;
+  margin-top: 400px;
+  margin-left: 700px;
+  background-color: lightpink;
+  width: 300px;
+  padding: 20px;
+}
+
+#gameOver {
   position: absolute;
   z-index: 1;
   margin-top: 400px;

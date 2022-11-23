@@ -13,6 +13,12 @@ const inventoryDogCollar = document.getElementById("inventoryDogCollar");
 const errorMessage = document.getElementById("guide");
 const dogbone = document.getElementById("parkDogbone");
 const dogCollar = document.getElementById("parkDogCollar");
+const deadDog = document.getElementById("deadDog");
+const aliveDog = document.getElementById("aliveDog");
+const finnish = document.getElementById("finnish");
+const gameOver = document.getElementById("gameOver");
+
+const keyKey = "fenceKey";
 
 let accessKey = false;
 let hasKey = false;
@@ -25,50 +31,77 @@ inventoryDogbone.style.filter = "opacity(0.25)";
 inventoryDogCollar.style.filter = "opacity(0.25)";
 chanceScene(currentScene);
 
+getPreviousInventory();
+
 hideErrorMessage();
+
+function saveInventory() {
+  sessionStorage.setItem(keyKey, hasKey.toString());
+}
+
+function getPreviousInventory() {
+  // key
+  let hasKeyValue = sessionStorage.getItem(keyKey);
+  hasKey = hasKeyValue === "true";
+  if (hasKey) {
+    inventoryKey.style.filter = "";
+  }
+}
 
 function chanceScene(scene) {
   let imageSource;
   hideErrorMessage();
   hideDogbone();
   hideDogCollar();
+  hideDeadDog();
+  hideAliveDog();
+  hideFinnish();
+  hideGameOver();
+  hideKey();
   if (scene == 1) {
     showKey();
     currentScene = 1;
     imageSource = FIRST;
-    // sceneCount += 1;
+    //sceneCount += 1;
   } else if (scene == 2) {
     if (hasKey) {
       hideKey();
       hideErrorMessage();
       currentScene = 2;
       imageSource = SECOND;
+      //sceneCount += 1;
     } else {
       showErrorMessage(
         "You must take the key with you before continuing to the next page!"
       );
     }
   } else if (scene == 3) {
-    hideErrorMessage();
-    if (hasDogCollar) {
+    showDogCollar();
+    showDogbone();
+    currentScene = 3;
+    imageSource = THIRD;
+    //sceneCount += 1;
+  } else if (scene == 4) {
+    if (hasDogCollar && hasDogbone) {
+      hideDogbone();
       hideDogCollar();
       hideErrorMessage();
-      currentScene = 2;
-      imageSource = SECOND;
+      let rand = Math.floor(Math.random() * 2) + 1;
+      if (rand == 2) {
+        showAliveDog();
+        showFinnish();
+      } else {
+        showDeadDog();
+        showGameOver();
+      }
+      currentScene = 4;
+      imageSource = FORTH;
+      //sceneCount += 1;
     } else {
       showErrorMessage(
-        "You must take the dogcollar and dogbone with you before continuing to the next page!"
+        "You must take the bone and dog collar with you before continuing to the next page!"
       );
-      showDogbone();
-      showDogCollar();
-      currentScene = 3;
-      imageSource = THIRD;
-      sceneCount += 1;
     }
-  } else if (scene == 4) {
-    currentScene = 4;
-    imageSource = FORTH;
-    sceneCount += 1;
   }
 
   console.log(arrowRight);
@@ -99,6 +132,7 @@ key.addEventListener("click", function () {
   if (!hasKey) {
     hasKey = true;
     hideKey();
+    saveInventory();
   }
 });
 
@@ -144,6 +178,38 @@ function showDogCollar() {
 
 function hideErrorMessage() {
   errorMessage.style.display = "none";
+}
+
+function hideAliveDog() {
+  aliveDog.hidden = true;
+}
+
+function showAliveDog() {
+  aliveDog.hidden = false;
+}
+
+function hideDeadDog() {
+  deadDog.hidden = true;
+}
+
+function showDeadDog() {
+  deadDog.hidden = false;
+}
+
+function hideFinnish() {
+  finnish.hidden = true;
+}
+
+function showFinnish() {
+  finnish.hidden = false;
+}
+
+function hideGameOver() {
+  gameOver.hidden = true;
+}
+
+function showGameOver() {
+  gameOver.hidden = false;
 }
 
 function showErrorMessage(message) {

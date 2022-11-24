@@ -25,7 +25,9 @@ h1 {
 #fenceKey {
   width: 100px;
   rotate: 270deg;
-  margin-bottom: 500px;
+  bottom: 350px;
+  position: absolute;
+  right: 350px;
 }
 
 #inventoryKey {
@@ -57,12 +59,16 @@ h1 {
 #parkDogbone {
   width: 100px;
   rotate: 270deg;
-  margin-bottom: 500px;
+  bottom: 150px;
+  position: absolute;
+  right: 350px;
 }
 
 #parkDogCollar {
   width: 100px;
-  margin-bottom: 500px;
+  bottom: 350px;
+  position: absolute;
+  right: 900px;
 }
 
 #aliveDog {
